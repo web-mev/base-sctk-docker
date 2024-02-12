@@ -1,6 +1,6 @@
 # This Dockerfile based upon one in the SCTK repository at 
 # https://github.com/compbiomed/singleCellTK/blob/master/Dockerfile
-FROM rocker/shiny-verse:4.0.3
+FROM rocker/shiny-verse:4.3.2
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
@@ -13,8 +13,8 @@ RUN apt-get update \
     git
 
 # Clone the repo and checkout the commit corresponding to the proper version/release of SCTK
-ENV COMMIT_ID="b2e61110022fd8ac67607d35c6f7dc9eb1a44b7e"
-ENV SCTK_VERSION="2.4.1"
+ENV COMMIT_ID="14c92130471e0b7acca579708ab3f32cba20dbca"
+ENV SCTK_VERSION="2.12.2"
 ENV PKG="singleCellTK_"$SCTK_VERSION
 
 RUN git clone https://github.com/compbiomed/singleCellTK.git /sctk
